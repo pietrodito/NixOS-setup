@@ -84,7 +84,6 @@
   users.users.ulys = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager"]; # Enable ‘sudo’ for the user.
-    passwd = 
   };
 
   # This value determines the NixOS release with which your system is to be
