@@ -21,3 +21,9 @@ mount /dev/disk/by-label/nixos /mnt
 mkdir -p /mnt/boot
 mount /dev/disk/by-label/boot /mnt/boot
 ```
+
+## Generating configuration.nix
+```{bash}
+nixos-generate-config --root /mnt
+vim /mnt/etc/nixos/configuration.nix
+``` 
