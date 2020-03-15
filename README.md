@@ -1,4 +1,12 @@
 # NixOS-setup
+
+## First steps
+```{bash}
+sudo su
+echo nnoremap ,r :.w !bash<CR>
+vim ~/install-script
+```
+
 ## Destination partitions setup
 
 ```{bash}
