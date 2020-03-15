@@ -14,6 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  networking.networkmanager.enable = true;
   networking.hostName = "nixos.pierre.cerim"; # Define your hostname.
   networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -82,7 +83,8 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ulys = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager"]; # Enable ‘sudo’ for the user.
+    passwd = 
   };
 
   # This value determines the NixOS release with which your system is to be
