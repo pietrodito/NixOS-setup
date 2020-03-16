@@ -39,17 +39,9 @@ mkfs.fat -F32 -n boot /dev/nvme0n1p6
 
 mount /dev/disk/by-label/nixos /mnt
 mkdir -p /mnt/boot
+mkdir -p /mnt/data
 mount /dev/disk/by-label/boot /mnt/boot
-
-```
-
-## Launch the install
-
-### Mounting destination partitions to filesystem
-```{bash}
-mount /dev/disk/by-label/nixos /mnt
-mkdir -p /mnt/boot
-mount /dev/disk/by-label/boot /mnt/boot
+mount /dev/disk/by-partlabel/data /mnt/data
 ```
 
 ## Generating configuration.nix
@@ -57,3 +49,4 @@ mount /dev/disk/by-label/boot /mnt/boot
 nixos-generate-config --root /mnt
 vim /mnt/etc/nixos/configuration.nix
 ``` 
+
