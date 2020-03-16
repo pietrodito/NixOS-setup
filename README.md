@@ -34,6 +34,7 @@ parted --script /dev/nvme0n1 -- mkpart ESP fat32 1MiB 512MiB
 parted --script /dev/nvme0n1 -- set 6 boot on
 
 mkfs.ext4 -L nixos /dev/nvme0n1p1
+mkfs.ext4 -L data /dev/nvme0n1p4
 mkswap -L swap /dev/nvme0n1p5
 mkfs.fat -F32 -n boot /dev/nvme0n1p6
 
