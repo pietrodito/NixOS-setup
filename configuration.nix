@@ -13,10 +13,10 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub.useOSProber = true;
 
   networking.networkmanager.enable = true;
   networking.hostName = "nixos.pierre.cerim"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
@@ -42,7 +42,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    wget vim
+    wget vim firefox emacs
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -76,15 +76,15 @@
   # Enable touchpad support.
   services.xserver.libinput.enable = true;
 
-  # Enable the KDE Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  # Enable Gnome desktop
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome3.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  # users.users.ulys = {
-  # isNormalUser = true;
-  # extraGroups = [ "wheel" "networkmanager"]; # Enable ‘sudo’ for the user.
-  #};
+   users.users.ulys = {
+   isNormalUser = true;
+   extraGroups = [ "wheel" "networkmanager"]; # Enable ‘sudo’ for the user.
+  };
 
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
