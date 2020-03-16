@@ -3,7 +3,7 @@
 ## First steps
 ```{bash}
 sudo su
-echo 'nnoremap ,r :.w !bash<CR>' > ~/.vimrc
+echo 'nnoremap <F1> :.w !bash<CR>' > ~/.vimrc
 vim ~/install-script
 ```
 
